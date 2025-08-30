@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #F8FAFC; /* slate-50 */
+    --color-foreground: #111827; /* gray-900 */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #3B82F6; /* blue-500 */
+    
+    /* Card and Surface Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Primary Colors - Deep Blue for Trust and Authority */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors - Professional Green for Normal Operations */
+    --color-secondary: #059669; /* emerald-600 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors - Emergency Red for Critical Alerts */
+    --color-accent: #DC2626; /* red-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Emergency Management Specific Colors */
+    --color-critical: #DC2626; /* red-600 */
+    --color-critical-foreground: #FFFFFF; /* white */
+    
+    --color-high: #F59E0B; /* amber-500 */
+    --color-high-foreground: #FFFFFF; /* white */
+    
+    --color-medium: #3B82F6; /* blue-500 */
+    --color-medium-foreground: #FFFFFF; /* white */
+    
+    --color-low: #10B981; /* emerald-500 */
+    --color-low-foreground: #FFFFFF; /* white */
+    
+    --color-normal: #059669; /* emerald-600 */
+    --color-normal-foreground: #FFFFFF; /* white */
+    
+    /* Surface Variations */
+    --color-surface-elevated: #FFFFFF; /* white */
+    --color-surface-elevated-foreground: #111827; /* gray-900 */
+    
+    --color-surface-muted: #F9FAFB; /* gray-50 */
+    --color-surface-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Interactive States */
+    --color-hover: #F3F4F6; /* gray-100 */
+    --color-active: #E5E7EB; /* gray-200 */
+    --color-focus: #3B82F6; /* blue-500 */
+    
+    /* Alert Severity Indicators */
+    --color-alert-critical: #DC2626; /* red-600 */
+    --color-alert-high: #F59E0B; /* amber-500 */
+    --color-alert-medium: #3B82F6; /* blue-500 */
+    --color-alert-low: #10B981; /* emerald-500 */
+    --color-alert-info: #6366F1; /* indigo-500 */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+  
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+  }
+  
+  /* Emergency Management Specific Styles */
+  .alert-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .status-glow {
+    box-shadow: 0 0 0 1px currentColor, 0 0 8px -2px currentColor;
+  }
+  
+  .emergency-focus {
+    @apply ring-2 ring-blue-500 ring-offset-2 ring-offset-white;
+  }
+  
+  /* Accessibility Enhancements */
+  @media (prefers-reduced-motion: reduce) {
+    .alert-pulse {
+      animation: none;
+    }
+    
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* High Contrast Mode Support */
+  @media (prefers-contrast: high) {
+    :root {
+      --color-border: #000000;
+      --color-foreground: #000000;
+      --color-background: #FFFFFF;
+    }
+  }
+}
+
+@layer components {
+  /* Emergency Alert Components */
+  .alert-critical {
+    @apply bg-red-50 border-red-200 text-red-900;
+  }
+  
+  .alert-high {
+    @apply bg-orange-50 border-orange-200 text-orange-900;
+  }
+  
+  .alert-medium {
+    @apply bg-blue-50 border-blue-200 text-blue-900;
+  }
+  
+  .alert-low {
+    @apply bg-green-50 border-green-200 text-green-900;
+  }
+  
+  .alert-info {
+    @apply bg-indigo-50 border-indigo-200 text-indigo-900;
+  }
+  
+  /* Status Indicators */
+  .status-critical {
+    @apply bg-red-600 text-white;
+  }
+  
+  .status-high {
+    @apply bg-orange-500 text-white;
+  }
+  
+  .status-medium {
+    @apply bg-blue-500 text-white;
+  }
+  
+  .status-low {
+    @apply bg-green-500 text-white;
+  }
+  
+  .status-normal {
+    @apply bg-green-600 text-white;
+  }
+  
+  /* Navigation Components */
+  .nav-item {
+    @apply flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200;
+  }
+  
+  .nav-item-active {
+    @apply bg-blue-50 text-blue-700 border border-blue-200;
+  }
+  
+  .nav-item-inactive {
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-50;
+  }
+  
+  /* Data Visualization Components */
+  .chart-container {
+    @apply bg-white border border-gray-200 rounded-xl p-6 shadow-sm;
+  }
+  
+  .data-card {
+    @apply bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Form Components */
+  .form-section {
+    @apply space-y-4 p-6 bg-white border border-gray-200 rounded-xl;
+  }
+  
+  .form-label {
+    @apply text-sm font-medium text-gray-900;
+  }
+  
+  .form-description {
+    @apply text-sm text-gray-600;
+  }
+  
+  .form-error {
+    @apply text-sm text-red-600;
+  }
+}
+
+@layer utilities {
+  /* Emergency Management Utilities */
+  .text-critical {
+    color: var(--color-critical);
+  }
+  
+  .text-high {
+    color: var(--color-high);
+  }
+  
+  .text-medium {
+    color: var(--color-medium);
+  }
+  
+  .text-low {
+    color: var(--color-low);
+  }
+  
+  .text-normal {
+    color: var(--color-normal);
+  }
+  
+  .bg-critical {
+    background-color: var(--color-critical);
+  }
+  
+  .bg-high {
+    background-color: var(--color-high);
+  }
+  
+  .bg-medium {
+    background-color: var(--color-medium);
+  }
+  
+  .bg-low {
+    background-color: var(--color-low);
+  }
+  
+  .bg-normal {
+    background-color: var(--color-normal);
+  }
+  
+  /* Typography Utilities */
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Animation Utilities */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px currentColor;
+    }
+    to {
+      box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+  
+  /* Focus Utilities */
+  .focus-emergency {
+    @apply focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white focus:outline-none;
+  }
+  
+  /* Spacing Utilities for Emergency Layouts */
+  .emergency-spacing {
+    @apply space-y-4;
+  }
+  
+  .emergency-padding {
+    @apply p-4 md:p-6;
+  }
+  
+  .emergency-margin {
+    @apply m-4 md:m-6;
+  }
+}
