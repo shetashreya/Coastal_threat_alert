@@ -1,5 +1,5 @@
 ## Live Demo
-[Click here to view the project]((https://coastal-threat-alert.onrender.com/))
+[Click here to view the live site](https://coastal-threat-alert.onrender.com)
 
 <img width="1719" height="886" alt="Screenshot 2025-08-31 071308" src="https://github.com/user-attachments/assets/86a31e76-fae0-46ad-9e78-2e3a05a34f83" />
 <img width="1067" height="926" alt="Screenshot 2025-08-31 071347" src="https://github.com/user-attachments/assets/0a0543c0-26c5-4202-90fd-e6ea45643710" />
